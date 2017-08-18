@@ -9,6 +9,7 @@ import se.saljex.sxlibrary.exceptions.KreditSparrException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import javax.ejb.Remote;
 import se.saljex.sxlibrary.exceptions.SXEntityNotFoundException;
 import se.saljex.sxlibrary.exceptions.SxInfoException;
@@ -29,5 +30,6 @@ public interface SxServerMainRemote {
 	public String getSXReg(String nyckel, String defaultVarde);
 
 	ArrayList<Integer> saveHemsidaOrder(int kontaktId, String kundnr, String kontaktNamn, short lagernr, String marke) throws KreditSparrException, SxInfoException;
+    List<Integer> importOrder(String anvandare, List<OrderImport> order) throws SxInfoException;
 
 }
